@@ -4,7 +4,10 @@ ddg_monomer是rosetta中计算蛋白质结构突变前后吉布斯自由能的�
 
 调用ddg_monomer其实和调用其他应用一样，都是在rosetta文件夹/main/source/bin的路径中使用``/path/to/ddg_monomer.<mpi/default/*>.linuxgccrelease``，需要调用多核同步进行运算的话，在指令面前加上``mpirun -np *``，*为核数，即同时进行的运算数，根据手头拥有的计算资源进行决定。
 
-ddg_monomer有根据蛋白质结构分辨率高低两种不同的计算选项，此处介绍测试过并成功跑通的高分辨率方法。调用ddg_monomer之前，还需要先准备三个不同文件：（1）经过清理（可用rosetta内自带python脚本清理）的蛋白质结构文件.pdb；（2）距离限制文件.cst；（3）突变信息文件.mutfile。下面将逐个介绍以上文件的准备方式。
+ddg_monomer有根据蛋白质结构分辨率高低两种不同的计算选项，此处介绍测试过并成功跑通的高分辨率方法。调用ddg_monomer之前，还需要先准备三个不同文件：
+（1）经过清理（可用rosetta内自带python脚本清理）的蛋白质结构文件.pdb；
+（2）距离限制文件.cst；
+（3）突变信息文件.mutfile。下面将逐个介绍以上文件的准备方式。
 
 我的习惯是创建一个文件夹来装某一次ddg_monomer运行所需的全部文件，以及运算之后的输出文件。
 
