@@ -81,7 +81,7 @@ Y 28 A
   
 关于mutfile文件更复杂的编写格式，详情查阅官方文档 ``https://new.rosettacommons.org/docs/latest/rosetta_basics/file_types/resfiles``，同样是域名后续可能会变，根据关键词从官网主页面开始找吧。  
 
-通过上述步骤，在当前的工作文件夹中，应该已经有了运行ddg_monomer应用所需的三个文件:(1)3CT7.pdb, (2)input.cst (3) 3ct7_28YtoA.mutfile （这里命名不太简洁，对于一个突变位点可以改用类似"3ct7_Y28A.mutfile"这样的形式）。  
+通过上述步骤，在当前的工作文件夹中，应该已经有了运行ddg_monomer应用所需的三个文件：(1)3CT7.pdb, (2)input.cst (3) 3ct7_28YtoA.mutfile （这里命名不太简洁，对于一个突变位点可以改用类似"3ct7_Y28A.mutfile"这样的形式）。  
   
 还需准备最后一个文件flags文件，flags文件是用于指定ddg_monomer的运行参数的，用文本编辑器编辑，同样是可以保存为txt，如果已经有.txt后缀，输入运行指令的时候，记得带上这个后缀。  
 flags文件内容如下，这里为避免混淆说明flags文件***并不是***后缀为.flags，而是在输入ddg_monomer运行指令是"@"后面跟的文件名，因为其功能性（指定了运行中的各种flags，如下面的“-ddg:weight_file standard_plus_score12 ”）而被称作flag。
