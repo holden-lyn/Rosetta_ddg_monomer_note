@@ -18,9 +18,9 @@ python <Rosetta_path>/tools/protein_tools/scripts/clean_pdb.py <protein.pdb> <pr
 ```
 
 此处:  
-"Rosetta_path"指的是Rosetta的路径  
-"protein.pdb"指的是输入的蛋白质结构文件.pdb，如果当前路径中没有，会直接从蛋白质结构数据rcsb.org下载（本次测试使用的就是脚本帮忙下载的蛋白质结构.pdb文件，本次测试时使用从uniprot下载的pdb文件进行清理时，在生成距离限制文件.cst的时候发生错误，故推荐让脚本自动从rcsb.org获取）  
-"protein_chain_No."指的是蛋白质链的序号，本教程中使用的是D-allulose 3-epimarase，即阿洛酮糖3差向异构酶，由6个相同的链组成，这里选取A链进行清理:  
+- "Rosetta_path"指的是Rosetta的路径  
+- "protein.pdb"指的是输入的蛋白质结构文件.pdb，如果当前路径中没有，会直接从蛋白质结构数据rcsb.org下载（本次测试使用的就是脚本帮忙下载的蛋白质结构.pdb文件，本次测试时使用从uniprot下载的pdb文件进行清理时，在生成距离限制文件.cst的时候发生错误，故推荐让脚本自动从rcsb.org获取）  
+- "protein_chain_No."指的是蛋白质链的序号，本教程中使用的是D-allulose 3-epimarase，即阿洛酮糖3差向异构酶，由6个相同的链组成，这里选取A链进行清理:  
 
 ```
 python /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools/protein_tools/scripts/clean_pdb.py 3ct7.pdb A
