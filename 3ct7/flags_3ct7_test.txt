@@ -1,0 +1,50 @@
+#-in:file:s 3CT7_A.pdb 
+#-ddg:weight_file soft_rep_design 
+#-ddg:iterations 2
+#-ddg:dump_pdbs true 
+#-ddg:mut_file 3ct7_28YtoA.mutfile 
+#-database /home/andrew/minirosetta_database 
+#-ignore_unrecognized_res 
+#-ddg:local_opt_only true 
+#-ddg:min_cst true
+#-ddg:suppress_checkpointing true 
+#-in:file:fullatom 
+#-ddg:mean false 
+#-ddg:min true 
+#-ddg:sc_min_only false 
+#-mute all 
+#-ddg:ramp_repulsive false 
+#-ddg:ramp_repulsive true 
+#-unmute core.optimization.LineMinimizer 
+#-constraints:cst_file input.cst  
+#-ddg:output_silent true 
+#-ddg:opt_radius 12.0
+#-score:fa_max_dis 9.0
+
+#Temporarily added by VKM since this is one of the integration tests showing instability on the test server.  Delete the following later:
+#-out:level 500
+
+-in:file:s 3CT7_A.pdb
+-ddg:mut_file 3ct7_28YtoA.mutfile
+#-ddg:weight_file soft_rep_design
+-ddg:weight_file standard_plus_score12 
+-ignore_unrecognized_res
+#-database /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/database/
+-fa_max_dis 9.0
+#-ddg:minimization_scorefunction talaris2013
+-ddg:iterations 2
+-ddg:dump_pdbs true
+-ignore_unrecognized_res
+-ddg:local_opt_only true
+-ddg:min_cst true
+-constraints:cst_file input.cst
+-ddg:suppress_checkpointing true
+-in:file:fullatom 
+-ddg:mean false
+-ddg:min true
+-ddg:sc_min_only false
+-ddg:ramp_repulsive true
+-unmute core.optimization.LineMinimizer
+-ddg:output_silent true
+
+-out:level 500
