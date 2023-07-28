@@ -1,5 +1,7 @@
 # Rosetta_ddg_monomer_tutorial
 
+
+
 # 1. Rosetta安装流程以及ddg_monomer应用的使用说明
 
 
@@ -100,6 +102,8 @@ AnchoredDesign.mpi.linuxgccrelease
 
 
 
+
+
 # 2. 这里提供我跟随教程指引测试rosetta功能的中文流程。
 
 进入rosetta自带的教程文件夹``cd <path_to_Rosetta_directory>/demos/tutorials/input_and_output``
@@ -116,6 +120,8 @@ $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s input_files/from_rcsb/1qy
 ```
 <path_to_Rosetta_directory>/demos/tutorials/input_and_output/input_files/1qys.o
 ```
+
+
 
 # 3. 接下来是相当重要的ddg_monomer的应用，还是开一个新的注释文件来说明吧。
 
