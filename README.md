@@ -7,7 +7,7 @@ The tutorial serves as a worklog for installation of Rosetta to remote server an
 
 (base) LHL 09:02:21 /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/ddg_monomer_test/3ct7
 $ cat /proc/version
-Linux version 5.15.0-76-generic (buildd@lcy02-amd64-019) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0, GNU ld (G2.34) #83~20.04.1-Ubuntu SMP Wed Jun 21 20:23:31 UTC 2023
+Linux version 5.15.0-76-generic (buildd@lcy02-amd64-019) (gcc (Ubuntu 9.4.0-1ubuntu1\~20.04.1) 9.4.0, GNU ld (G2.34) #83\~20.04.1-Ubuntu SMP Wed Jun 21 20:23:31 UTC 2023
 (base) LHL 10:55:14 /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/ddg_monomer_test/3ct7
 $ cat /etc/issue
 Ubuntu 20.04.6 LTS \n \l
