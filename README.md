@@ -68,8 +68,32 @@ export ROSETTA_TOOLS=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/
 
 环境变量设置好之后，开始去到源码包所在路径，进行解压和编译。
 
+去到源码所在目录，也就是压缩包在的地方，我这次：
+``cd /mnt/4T_sdb/LHL/test``
+解压
+``tar zxvf rosetta_src_*`` 替换成和自己的压缩包一样的名字，例如我这次 ``tar zxvf rosetta_src_2021.16.61629_bundle/main/source``
+使用gcc编译
+``./scons.py -j 20 mode=release bin extras=mpi`` 
+``-j 20``就是调用的核数，对应的``extras=mpi``会生成名为``*.mpi.linuxgccrelease``的文件，如果不加``extras=mpi``,生成的executable，也就是使用rosetta时候调用的文件，名为``*.default.linuxgccrelease``。目前我不完全理解两种方式的区别，在后续测试中发现有时候调用mpi多进程执行rosetta命令有时候会出现报错，遂同时编译了default的executables（``./scons.py -j 20 mode=release bin``）。编译所需要的时间跟调用的核数有关系，也和其他因素有关系，印象中调用4、5核我也花了几分钟分别进行.mpi和.default应用的编译。
 
+查看有哪些功能可供使用
+``ls $ROSETTA/main/source/bin/``或``ls /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/source/bin``，其实$ROSETTA在这里应该就是代替了rosetta的路径，不过环境变量的设置也可能带来其他影响，所以不要跳过环境变量的设置。可以看见同时编译了default和mpi版本的应用。
+``
+AbinitioRelax.default.linuxgccrelease
+AbinitioRelax.linuxgccrelease
+AbinitioRelax.mpi.linuxgccrelease
+analyze_base_pairing.default.linuxgccrelease
+analyze_base_pairing.linuxgccrelease
+analyze_base_pairing.mpi.linuxgccrelease
+AnchoredDesign.default.linuxgccrelease
+AnchoredDesign.linuxgccrelease
+AnchoredDesign.mpi.linuxgccrelease
+...
+``
 
+测试，这里我用rosetta官方的教程，包含了rosetta中必须输入、输出文件的操作``https://www.rosettacommons.org/demos/latest/tutorials/input_and_output/input_and_output``,域名是有可能变的，如果改变了，请根据这里提供的关键词自己从主页开始点进去吧。
+
+这里提供我跟随教程指引测试rosetta功能的中文流程。
 
 
 
