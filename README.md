@@ -51,10 +51,11 @@ sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
 ``
 
 bash环境变量配置：
-我这里是进vi去编辑添加环境变量，vi操作挺不符合平时电脑的操作习惯的，详细可以去链接里看看。这里主要用到``i``在光标位置启用编辑``esc``
+我这里是进vi去编辑添加环境变量，vi操作挺不符合平时电脑的操作习惯的，详细可以去链接里看看。这里主要用到``i``在光标位置启用编辑，``esc``结束编辑回到vi的“上一层”，不保存退出``:``后``!q``，保存退出``:``后``wq``。建议了解一下vi界面操作再进去，免得像我第一次一样写入的时候手忙脚乱，写完又不知道编辑的东西保存了没。
+vi界面操作指南``https://www.runoob.com/linux/linux-vim.html``
 
-``
 目前，在~/.bashrc中加入：
+``
 #Rosetta
 export ROSETTA=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle
 export ROSETTA3_DB=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/database
@@ -64,5 +65,13 @@ export LD_LIBRARY_PATH=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/mai
 export ROSETTA3=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/source
 export ROSETTA_TOOLS=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools
 ``
+
+环境变量设置好之后，开始去到源码包所在路径，进行解压和编译。
+
+
+
+
+
+
 
 
