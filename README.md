@@ -6,7 +6,7 @@ Rosetta安装流程以及ddg_monomer应用的使用说明
 The tutorial serves as a worklog for installation of Rosetta to remote server and using the ddg_monomer application. 
 
 检查服务器上的Linux，buntu以及gcc
-
+···
 (base) LHL 09:02:21 /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/ddg_monomer_test/3ct7
 
 $ cat /proc/version
@@ -27,6 +27,6 @@ gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
 Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
+···
 
 Rosetta包下载与license请求。
