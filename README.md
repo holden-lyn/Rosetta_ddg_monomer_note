@@ -30,3 +30,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
 Rosetta包下载与license请求。
+
+在``https://www.rosettacommons.org``寻找“license&download”，因为域名偶尔会变，所以这里只贴主页链接。
+
+**按照知乎Rosy Wu的提示，不要用edge浏览器下载安装包，会自动改为gz扩展名，导致解压出现问题。
+
