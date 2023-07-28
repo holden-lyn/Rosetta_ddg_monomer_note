@@ -1,6 +1,6 @@
 # Rosetta_ddg_monomer_tutorial
 
-#1. Rosetta安装流程以及ddg_monomer应用的使用说明
+# 1. Rosetta安装流程以及ddg_monomer应用的使用说明
 
 
 The tutorial serves as a worklog for installation of Rosetta to remote server and using the ddg_monomer application. 
@@ -100,7 +100,7 @@ AnchoredDesign.mpi.linuxgccrelease
 
 
 
-#2. 这里提供我跟随教程指引测试rosetta功能的中文流程。
+# 2. 这里提供我跟随教程指引测试rosetta功能的中文流程。
 
 
 
