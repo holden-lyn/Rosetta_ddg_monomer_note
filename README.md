@@ -1,6 +1,6 @@
 # Rosetta_ddg_monomer_tutorial
 
-Rosetta安装流程以及ddg_monomer应用的使用说明
+#1. Rosetta安装流程以及ddg_monomer应用的使用说明
 
 
 The tutorial serves as a worklog for installation of Rosetta to remote server and using the ddg_monomer application. 
@@ -98,7 +98,10 @@ AnchoredDesign.mpi.linuxgccrelease
 
 测试，这里我用rosetta官方的教程，包含了rosetta中必须输入、输出文件的操作``https://www.rosettacommons.org/demos/latest/tutorials/input_and_output/input_and_output``,域名是有可能变的，如果改变了，请根据这里提供的关键词自己从主页开始点进去吧。
 
-这里提供我跟随教程指引测试rosetta功能的中文流程。
+
+
+#2. 这里提供我跟随教程指引测试rosetta功能的中文流程。
+
 
 
 
