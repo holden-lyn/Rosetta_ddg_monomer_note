@@ -55,7 +55,7 @@ bash环境变量配置：
 vi界面操作指南``https://www.runoob.com/linux/linux-vim.html``
 
 目前，在~/.bashrc中加入：
-``
+```
 #Rosetta
 export ROSETTA=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle
 export ROSETTA3_DB=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/database
@@ -64,7 +64,7 @@ export PATH=$PATH:$ROSETTA_BIN
 export LD_LIBRARY_PATH=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/source/bin:$LD_LIBRARY_PATH
 export ROSETTA3=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/source
 export ROSETTA_TOOLS=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools
-``
+```
 
 环境变量设置好之后，开始去到源码包所在路径，进行解压和编译。
 
@@ -78,7 +78,7 @@ export ROSETTA_TOOLS=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/
 
 查看有哪些功能可供使用
 ``ls $ROSETTA/main/source/bin/``或``ls /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/source/bin``，其实$ROSETTA在这里应该就是代替了rosetta的路径，不过环境变量的设置也可能带来其他影响，所以不要跳过环境变量的设置。可以看见同时编译了default和mpi版本的应用。
-``
+```
 AbinitioRelax.default.linuxgccrelease
 AbinitioRelax.linuxgccrelease
 AbinitioRelax.mpi.linuxgccrelease
@@ -89,7 +89,7 @@ AnchoredDesign.default.linuxgccrelease
 AnchoredDesign.linuxgccrelease
 AnchoredDesign.mpi.linuxgccrelease
 ...
-``
+```
 
 测试，这里我用rosetta官方的教程，包含了rosetta中必须输入、输出文件的操作``https://www.rosettacommons.org/demos/latest/tutorials/input_and_output/input_and_output``,域名是有可能变的，如果改变了，请根据这里提供的关键词自己从主页开始点进去吧。
 
