@@ -102,6 +102,13 @@ AnchoredDesign.mpi.linuxgccrelease
 
 # 2. 这里提供我跟随教程指引测试rosetta功能的中文流程。
 
+进入rosetta自带的教程文件夹``cd <path_to_Rosetta_directory>/demos/tutorials/input_and_output``
+
+用``$ROSETTA3/bin/score_jd2.default.linuxgccrelease -in:file:s input_files/1qys.pdb``调用score_jd2应用，计算energy score（因为不够清楚energy score的中文定义所以此处保留英文）。
+
+``ls``，会看到生成了score.sc文件，可以用``cat score.sc``看看内容。
+
+
 
 
 
