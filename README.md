@@ -108,6 +108,20 @@ AnchoredDesign.mpi.linuxgccrelease
 
 ``ls``，会看到生成了score.sc文件，可以用``cat score.sc``看看内容。
 
+再试试输出文件的指令
+```
+$ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:file:silent output_files/1qys.o @flag_input_relax
+```
+可以在这个路径下看到输出的文件，不过silent file不是human readable的
+```
+<path_to_Rosetta_directory>/demos/tutorials/input_and_output/input_files/1qys.o
+```
+
+# 3. 接下来是相当重要的ddg_monomer的应用，还是开一个新的注释文件来说明吧。
+
+见本教程中的"ddg_monomer.md"。
+
+
 
 
 
