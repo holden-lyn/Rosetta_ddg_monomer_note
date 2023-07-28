@@ -33,5 +33,36 @@ Rosetta包下载与license请求。
 
 在``https://www.rosettacommons.org``寻找“license&download”，因为域名偶尔会变，所以这里只贴主页链接。
 
-**按照知乎Rosy Wu的提示，不要用edge浏览器下载安装包，会自动改为gz扩展名，导致解压出现问题。
+**按照知乎Rosy Wu的提示，不要用edge浏览器下载安装包，会自动改为gz扩展名，导致解压出现问题。**
+
+向服务器传送安装包，我使用xshell，xftp两件套，xftp中“文件”，“新建”，设置端口号，用户名，密码，当然还有服务器地址。直接把下好的Rosetta压缩包拖进服务器中想要的路径里头。我这里是自己的test文件夹，路径类似``home/me/Project/test/Rosetta``。
+
+安装依赖包
+``
+sudo apt-get install libboost-dev
+sudo apt-get install python
+sudo apt-get install zlib1g-dev
+``
+如果没有sudo权限可以先试试去掉sudo，或者让有权限的管理员帮忙装。
+
+OPENMPI也得装
+``
+sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
+``
+
+bash环境变量配置：
+我这里是进vi去编辑添加环境变量，vi操作挺不符合平时电脑的操作习惯的，详细可以去链接里看看。这里主要用到``i``在光标位置启用编辑``esc``
+
+``
+目前，在~/.bashrc中加入：
+#Rosetta
+export ROSETTA=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle
+export ROSETTA3_DB=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/database
+export ROSETTA_BIN=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/source/bin
+export PATH=$PATH:$ROSETTA_BIN
+export LD_LIBRARY_PATH=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/source/bin:$LD_LIBRARY_PATH
+export ROSETTA3=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/source
+export ROSETTA_TOOLS=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools
+``
+
 
