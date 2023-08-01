@@ -7,7 +7,7 @@
 
 The tutorial serves as a worklog for installation of Rosetta to remote server and using the ddg_monomer application. 
 
-检查服务器上的Linux，buntu以及gcc
+检查服务器上的Linux，ubuntu以及gcc
 ```
 (base) LHL 09:02:21 /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/ddg_monomer_test/3ct7
 
