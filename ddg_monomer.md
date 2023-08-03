@@ -1,5 +1,6 @@
-# Rosetta中ddg_monomer应用的使用教程。
+# Rosetta中ddg_monomer应用的使用教程。 
 
+## ddg_monomer基本原理与使用方式
 ddg_monomer是rosetta中计算蛋白质结构突变前后吉布斯自由能的差值的应用，是计算机辅助设计的常用手段。一般来说，ddg_monomer计算出来的ddg小于0，则表示ddg_monomer预测蛋白质突变之后的结构具备更高的热稳定性。
 
 调用ddg_monomer其实和调用其他应用一样，都是在rosetta文件夹/main/source/bin的路径中使用``/path/to/ddg_monomer.<mpi/default/*>.linuxgccrelease``，需要调用多核同步进行运算的话，在指令面前加上``mpirun -np *``，*为核数，即同时进行的运算数，根据手头拥有的计算资源进行决定。  
