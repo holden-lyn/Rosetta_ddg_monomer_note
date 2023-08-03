@@ -5,7 +5,7 @@ ddg_monomer是rosetta中计算蛋白质结构突变前后吉布斯自由能的�
 
 调用ddg_monomer其实和调用其他应用一样，都是在rosetta文件夹/main/source/bin的路径中使用``/path/to/ddg_monomer.<mpi/default/*>.linuxgccrelease``，需要调用多核同步进行运算的话，在指令面前加上``mpirun -np *``，*为核数，即同时进行的运算数，根据手头拥有的计算资源进行决定。  
 
-建议全程关注指令中的文件名，路径等是否正确。
+建议全程关注指令中的文件名，路径等是否正确。 
  
  
  
@@ -15,8 +15,8 @@ ddg_monomer有根据蛋白质结构分辨率高低两种不同的计算选项，
 （2）距离限制文件.cst；  
 （3）突变信息文件.mutfile。下面将逐个介绍以上文件的准备方式。
 
-我的习惯是创建一个文件夹来装某一次ddg_monomer运行所需的全部文件，以及运算之后的输出文件。
-
+我的习惯是创建一个文件夹来装某一次ddg_monomer运行所需的全部文件，以及运算之后的输出文件。 
+ 
  
 ### 2.1 蛋白质结文件
 先使用rosetta内置python脚本来运行clean.py清理蛋白质序列。
@@ -34,8 +34,8 @@ python <Rosetta_path>/tools/protein_tools/scripts/clean_pdb.py <protein.pdb> <pr
 python /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools/protein_tools/scripts/clean_pdb.py 3ct7.pdb A
 ```
 
-这时候会得到"3CT7_A.pdb"，"3CT7_A.fasta"文件。  
-
+这时候会得到"3CT7_A.pdb"，"3CT7_A.fasta"文件。 
+ 
  
 ### 2.2 距离限制文件
 进行能量最小化
@@ -75,7 +75,7 @@ tcsh ./convert_to_cst_file.sh mincst_3ct7.log >input.cst
 ```
 会得到名为"input.cst"的距离限制文件，取决于指令中指定的生成文件名。  
   
-最后再准备一下突变信息文件.mutfile，可以是txt文件格式，文件内的突变信息格式如下：  
+最后再准备一下突变信息文件.mutfile，可以是txt文件格式，文件内的突变信息格式如下： 
  
  
 ### 2.3 突变信息文件 
@@ -120,17 +120,17 @@ flags文件内容如下，这里为避免混淆说明flags文件***并不是***�
 -ddg:output_silent true
 
 -out:level 500
-```
-
-
+``` 
+ 
+ 
  
 ## 3. 运行ddg_monomer功能
 保存为.txt，万事俱备只差一行指令。  
 ```
 mpirun -np 50 $ROSETTA3/bin/ddg_monomer.mpi.linuxgccrelease @flags_3ct7_test.txt
-```
-
-
+``` 
+ 
+ 
  
 ## 4.测试运行情况与输出文件的基本信息解读
 本次测试的3ct7 A链长度为219，突变位点指定为一个，调用50核进行运算，注意了一下大概花了半小时，所以在运行实例时需要考虑到所能调用的算力，宜通过已知知识尽量缩小突变范围，节省时间和算力。  
