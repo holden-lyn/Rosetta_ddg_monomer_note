@@ -5,8 +5,10 @@ ddg_monomer是rosetta中计算蛋白质结构突变前后吉布斯自由能的�
 
 调用ddg_monomer其实和调用其他应用一样，都是在rosetta文件夹/main/source/bin的路径中使用``/path/to/ddg_monomer.<mpi/default/*>.linuxgccrelease``，需要调用多核同步进行运算的话，在指令面前加上``mpirun -np *``，*为核数，即同时进行的运算数，根据手头拥有的计算资源进行决定。  
 
-建议全程关注指令中的文件名，路径等是否正确。  
-
+建议全程关注指令中的文件名，路径等是否正确。
+ 
+ 
+ 
 ## 2. 准备运行Rosetta所需的三个文件
 ddg_monomer有根据蛋白质结构分辨率高低两种不同的计算选项，此处介绍测试过并成功跑通的高分辨率方法。调用ddg_monomer之前，还需要先准备三个不同文件：  
 （1）经过清理（可用rosetta内自带python脚本清理）的蛋白质结构文件.pdb；  
@@ -15,6 +17,7 @@ ddg_monomer有根据蛋白质结构分辨率高低两种不同的计算选项，
 
 我的习惯是创建一个文件夹来装某一次ddg_monomer运行所需的全部文件，以及运算之后的输出文件。
 
+ 
 ### 2.1 蛋白质结文件
 先使用rosetta内置python脚本来运行clean.py清理蛋白质序列。
 
@@ -32,6 +35,7 @@ python /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools/protein_
 ```
 
 这时候会得到"3CT7_A.pdb"，"3CT7_A.fasta"文件。  
+
  
 ### 2.2 距离限制文件
 进行能量最小化
@@ -118,12 +122,16 @@ flags文件内容如下，这里为避免混淆说明flags文件***并不是***�
 -out:level 500
 ```
 
+
+ 
 ## 3. 运行ddg_monomer功能
 保存为.txt，万事俱备只差一行指令。  
 ```
 mpirun -np 50 $ROSETTA3/bin/ddg_monomer.mpi.linuxgccrelease @flags_3ct7_test.txt
 ```
 
+
+ 
 ## 4.测试运行情况与输出文件的基本信息解读
 本次测试的3ct7 A链长度为219，突变位点指定为一个，调用50核进行运算，注意了一下大概花了半小时，所以在运行实例时需要考虑到所能调用的算力，宜通过已知知识尽量缩小突变范围，节省时间和算力。  
 
