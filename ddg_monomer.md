@@ -1,12 +1,13 @@
 # Rosetta中ddg_monomer应用的使用教程。 
 
-## ddg_monomer基本原理与使用方式
+## 1. ddg_monomer基本原理与使用方式
 ddg_monomer是rosetta中计算蛋白质结构突变前后吉布斯自由能的差值的应用，是计算机辅助设计的常用手段。一般来说，ddg_monomer计算出来的ddg小于0，则表示ddg_monomer预测蛋白质突变之后的结构具备更高的热稳定性。
 
 调用ddg_monomer其实和调用其他应用一样，都是在rosetta文件夹/main/source/bin的路径中使用``/path/to/ddg_monomer.<mpi/default/*>.linuxgccrelease``，需要调用多核同步进行运算的话，在指令面前加上``mpirun -np *``，*为核数，即同时进行的运算数，根据手头拥有的计算资源进行决定。  
 
 建议全程关注指令中的文件名，路径等是否正确。  
-  
+
+## 2. 准备运行Rosetta所需的三个文件
 ddg_monomer有根据蛋白质结构分辨率高低两种不同的计算选项，此处介绍测试过并成功跑通的高分辨率方法。调用ddg_monomer之前，还需要先准备三个不同文件：  
 （1）经过清理（可用rosetta内自带python脚本清理）的蛋白质结构文件.pdb；  
 （2）距离限制文件.cst；  
@@ -14,6 +15,7 @@ ddg_monomer有根据蛋白质结构分辨率高低两种不同的计算选项，
 
 我的习惯是创建一个文件夹来装某一次ddg_monomer运行所需的全部文件，以及运算之后的输出文件。
 
+### 2.1 蛋白质结文件
 先使用rosetta内置python脚本来运行clean.py清理蛋白质序列。
 
 ```
@@ -30,7 +32,8 @@ python /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools/protein_
 ```
 
 这时候会得到"3CT7_A.pdb"，"3CT7_A.fasta"文件。  
-  
+ 
+### 2.2 距离限制文件
 进行能量最小化
 ```
 mpirun -np 6 <rosetta_path>/main/source/bin/minimize_with_cst.mpi.linuxgccrelease -in:file:s 3CT7_A.pdb -in:file:fullaton -ignore_unrecognized_res -fa_max_dis 9.0 -database <rosetta_path>/main/database -ddg::harmonic_ca_tether 0.5 -ddg::constraint_weight 1.0 -ddg::out_pdb_prefix min_cst_0.5 -ddg::sc_min_only > mincst_3ct7.log
@@ -69,7 +72,9 @@ tcsh ./convert_to_cst_file.sh mincst_3ct7.log >input.cst
 会得到名为"input.cst"的距离限制文件，取决于指令中指定的生成文件名。  
   
 最后再准备一下突变信息文件.mutfile，可以是txt文件格式，文件内的突变信息格式如下：  
-  
+ 
+ 
+### 2.3 突变信息文件 
 ***注意，在之前用clean.py清理蛋白质的时候，蛋白质序列有可能会被重新排列，建议用蛋白质结构可视化软件，如UCSF Chimera，PyMol等，确认想要突变的蛋白质在清理后的.pdb文件中的序列。（此案例3CT7_A.pdb）***  
   
 本次突变一个位点，是第28位由氨基酸Y突变成氨基酸A：  
@@ -112,12 +117,14 @@ flags文件内容如下，这里为避免混淆说明flags文件***并不是***�
 
 -out:level 500
 ```
-    
+
+## 3. 运行ddg_monomer功能
 保存为.txt，万事俱备只差一行指令。  
 ```
 mpirun -np 50 $ROSETTA3/bin/ddg_monomer.mpi.linuxgccrelease @flags_3ct7_test.txt
 ```
-  
+
+## 4.测试运行情况与输出文件的基本信息解读
 本次测试的3ct7 A链长度为219，突变位点指定为一个，调用50核进行运算，注意了一下大概花了半小时，所以在运行实例时需要考虑到所能调用的算力，宜通过已知知识尽量缩小突变范围，节省时间和算力。  
 
 输出文件是ddg_predictions.out，打开之后可以看见计算出来突变点位的ddg也就是吉布斯自由能差值，这是突变后蛋白质热稳定性的重要预测依据，如果小于0则说明突变之后的蛋白质更稳定了！
