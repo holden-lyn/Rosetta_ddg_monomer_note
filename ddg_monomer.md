@@ -40,7 +40,7 @@ python /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools/protein_
 ### 2.2 距离限制文件
 进行能量最小化
 ```
-mpirun -np 6 <rosetta_path>/main/source/bin/minimize_with_cst.mpi.linuxgccrelease -in:file:s 3CT7_A.pdb -in:file:fullaton -ignore_unrecognized_res -fa_max_dis 9.0 -database <rosetta_path>/main/database -ddg::harmonic_ca_tether 0.5 -ddg::constraint_weight 1.0 -ddg::out_pdb_prefix min_cst_0.5 -ddg::sc_min_only > mincst_3ct7.log
+mpirun -np 6 <rosetta_path>/main/source/bin/minimize_with_cst.mpi.linuxgccrelease -in:file:s 3CT7_A.pdb -in:file:fullatom -ignore_unrecognized_res -fa_max_dis 9.0 -database <rosetta_path>/main/database -ddg::harmonic_ca_tether 0.5 -ddg::constraint_weight 1.0 -ddg::out_pdb_prefix min_cst_0.5 -ddg::sc_min_only > mincst_3ct7.log
 ```
   
 这里得到的"mincs_3ct7.log"文件，是能量最小化过程生成的log文件，可以在文本编辑器里面检查一下是否生成了后续.cst文件需要的关键信息，例如：  
