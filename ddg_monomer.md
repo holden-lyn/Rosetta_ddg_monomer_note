@@ -60,16 +60,16 @@ tcsh --version
 apt install tcsh
 ```
   
-使用自带的脚本抓取信息，生成距离限制文件.cst。  
-需要注意的是自带的脚本中的抓取命令有点过时，无法准确抓取log文件中的信息，这次测试将脚本编辑成如下，以替代原脚本文件：
+编写shell脚本从生成的.log文件中抓取信息，生成距离限制文件.cst。  
+Rosetta包里有自带的实现这个功能的脚本，脚本的路径在``/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/source/src/apps/public/ddg``需要注意的是自带的脚本中的抓取命令有点过时，无法准确抓取log文件中的信息，这次测试将脚本打开，编辑成如下：
 ```
 grep ^apps.public.ddg.minimize_with_cst $1 | awk '{print "AtomPair CA "$7" CA "$9" HARMONIC "$11" "$14}'
 ```
-现在再运行脚本，甚至可以直接把新编辑的脚本复制到当前的工作路径。
+编辑之后的脚本可用复制到当前的工作文件夹，如果使用rosetta自带脚本：
 ```
 tcsh <rosetta_path>/main/source/src/apps/public/ddg/convert_to_cst_file.sh mincst_3ct7.log >input.cst
 ```
-如果脚本就在当前路径
+如果将脚本移动到当前的路径：
 ```
 tcsh ./convert_to_cst_file.sh mincst_3ct7.log >input.cst
 ```
