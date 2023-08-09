@@ -73,7 +73,8 @@ tcsh <rosetta_path>/main/source/src/apps/public/ddg/convert_to_cst_file.sh mincs
 ```
 tcsh ./convert_to_cst_file.sh mincst_3ct7.log >input.cst
 ```
-会得到名为"input.cst"的距离限制文件，取决于指令中指定的生成文件名。  
+会得到名为"input.cst"的距离限制文件，生成的.cst文件名取决于指令中指定的生成文件名。 
+ ***打开.cst文件删除空行（包括脚本中指定的文字生成，但是距离限制数据为空的行），否则会影响ddg_monomer读取.cst文件中的信息。***
   
 最后再准备一下突变信息文件.mutfile，可以是txt文件格式，文件内的突变信息格式如下： 
  
