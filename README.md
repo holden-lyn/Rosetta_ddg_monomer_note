@@ -61,7 +61,7 @@ vi界面操作指南``https://www.runoob.com/linux/linux-vim.html``
 vi ~/.bashrc
 ```
 
-目前，在~/.bashrc中加入：
+文章编辑时，在~/.bashrc中加入：
 ```
 #Rosetta
 export ROSETTA=/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle
