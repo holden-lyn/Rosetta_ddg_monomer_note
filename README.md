@@ -125,7 +125,7 @@ $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s input_files/from_rcsb/1qy
 
 # 3. 接下来是相当重要的ddg_monomer的应用，还是开一个新的注释文件来说明吧。
 
-见本教程中的"(ddg_monomer.md)[https://github.com/holden-lyn/Rosetta_ddg_monomer_tutorial/blob/main/ddg_monomer.md]"。
+见本教程中的"[ddg_monomer.md](https://github.com/holden-lyn/Rosetta_ddg_monomer_tutorial/blob/main/ddg_monomer.md)"。
 
 
 
