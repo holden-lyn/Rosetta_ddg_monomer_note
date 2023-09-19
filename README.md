@@ -1,6 +1,6 @@
 # Rosetta_ddg_monomer_tutorial
 
-
+已经安装好Rosetta，直接看[ddg_monomer使用](ddg_monomer.md)
 
 # 1. Rosetta安装流程以及ddg_monomer应用的使用说明
 
