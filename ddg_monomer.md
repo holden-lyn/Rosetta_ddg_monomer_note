@@ -69,6 +69,10 @@ grep constraints $1 | awk '{print "AtomPair CA "$8" CA "$10" HARMONIC "$12" "$15
 ```
 tcsh <rosetta_path>/main/source/src/apps/public/ddg/convert_to_cst_file.sh mincst_3ct7.log >input.cst
 ```
+或者直接bash
+```
+bash <rosetta_path>/main/source/src/apps/public/ddg/convert_to_cst_file.sh mincst_3ct7.log >input.cst
+```
 如果将脚本移动到当前的路径：
 ```
 tcsh ./convert_to_cst_file.sh mincst_3ct7.log >input.cst
