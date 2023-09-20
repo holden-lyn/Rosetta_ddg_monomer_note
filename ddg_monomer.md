@@ -63,7 +63,7 @@ apt install tcsh
 编写shell脚本从生成的.log文件中抓取信息，生成距离限制文件.cst。  
 Rosetta包里有自带的实现这个功能的脚本，脚本的路径在``/mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/source/src/apps/public/ddg``需要注意的是自带的脚本中的抓取命令有点过时，无法准确抓取log文件中的信息，这次测试将脚本打开，编辑成如下：
 ```
-grep constraints $1 | awk '{print "AtomPair CA "$5" CA "$7" HARMONIC "$9" "$12}'
+grep constraints $1 | awk '{print "AtomPair CA "$8" CA "$10" HARMONIC "$12" "$15}'
 ```
 编辑之后的脚本可用复制到当前的工作文件夹，如果使用rosetta自带脚本：
 ```
@@ -137,6 +137,8 @@ mpirun -np 50 $ROSETTA3/bin/ddg_monomer.mpi.linuxgccrelease @flags_3ct7_test.txt
 ## 4.测试运行情况与输出文件的基本信息解读
 本次测试的3ct7 A链长度为219，突变位点指定为一个，调用50核进行运算，注意了一下大概花了半小时，所以在运行实例时需要考虑到所能调用的算力，宜通过已知知识尽量缩小突变范围，节省时间和算力。  
 
+2023-09-19 用-np 调用多核似乎不会提升计算速度，仅仅是多个进程将同样的计算进行多次。  
+  
 输出文件是ddg_predictions.out，打开之后可以看见计算出来突变点位的ddg也就是吉布斯自由能差值，这是突变后蛋白质热稳定性的重要预测依据，如果小于0则说明突变之后的蛋白质更稳定了！
 
 
