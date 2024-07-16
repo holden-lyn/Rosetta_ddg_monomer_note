@@ -133,7 +133,7 @@ flags文件内容如下，这里为避免混淆说明flags文件***并不是***�
  
 ## 3. 运行ddg_monomer功能  
 ```
-mpirun -np 50 $ROSETTA3/bin/ddg_monomer.mpi.linuxgccrelease @flags_3ct7_test.txt
+$ROSETTA3/bin/ddg_monomer.mpi.linuxgccrelease @flags_3ct7_test.txt
 ``` 
  
  
