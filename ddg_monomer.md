@@ -1,4 +1,4 @@
-# Rosetta中ddg_monomer应用的使用教程。 
+# Rosetta中ddg_monomer应用的使用流程。 
 
 ## 1. ddg_monomer基本原理与使用方式
 ddg_monomer是rosetta中计算蛋白质结构突变前后吉布斯自由能的差值的应用，是计算机辅助设计的常用手段。一般来说，ddg_monomer计算出来的ddg小于0，则表示ddg_monomer预测蛋白质突变之后的结构具备更高的热稳定性。
@@ -28,7 +28,7 @@ python <Rosetta_path>/tools/protein_tools/scripts/clean_pdb.py <protein.pdb> <pr
 此处:  
 - "Rosetta_path"指的是Rosetta的路径  
 - "protein.pdb"指的是输入的蛋白质结构文件.pdb，如果当前路径中没有，会直接从蛋白质结构数据rcsb.org下载（本次测试使用的就是脚本帮忙下载的蛋白质结构.pdb文件，本次测试时使用从uniprot下载的pdb文件进行清理时，在生成距离限制文件.cst的时候发生错误，故推荐让脚本自动从rcsb.org获取）  
-- "protein_chain_No."指的是蛋白质链的序号，本教程中使用的是D-allulose 3-epimarase，即阿洛酮糖3差向异构酶，由6个相同的链组成，这里选取A链进行清理:  
+- "protein_chain_No."指的是蛋白质链的序号，本流程中使用的是D-allulose 3-epimarase，即阿洛酮糖3差向异构酶，由6个相同的链组成，这里选取A链进行清理:  
 
 ```
 python /mnt/4T_sdb/LHL/test/rosetta_src_2021.16.61629_bundle/main/tools/protein_tools/scripts/clean_pdb.py 3ct7.pdb A
