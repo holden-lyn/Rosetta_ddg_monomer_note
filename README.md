@@ -1,4 +1,4 @@
-# Rosetta_ddg_monomer_tutorial
+# Rosetta_ddg_monomer workflow
 
 已经安装好Rosetta，直接看[ddg_monomer使用](ddg_monomer.md)
 
